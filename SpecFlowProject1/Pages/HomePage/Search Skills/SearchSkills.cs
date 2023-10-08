@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace SpecflowProject1.Pages.HomePage.Search_Skills
 {
-    internal class SearchSkill
+    internal class SearchSkills
     {
 
-        public string Category { get; set; }
-        public string SubCategory { get; set; }
-        public string Skill { get; set; }
+        public List<SearchSkill> searchskills { get; set; }
     }
 }
 

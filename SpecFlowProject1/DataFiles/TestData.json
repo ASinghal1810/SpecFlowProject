@@ -11,12 +11,12 @@
       "ExpectedResult": "Fail"
     },
     {
-      "Username": "ankursinghal9118@gmail.com",
-      "Password": "Singhal&18",
+      "Username": "Ankursinghal9118@gmail.com",
+      "Password": "Singhal&181",
       "ExpectedResult": "Success"
     },
     {
-      "Username": "Ankursinghal9118@gmail.com",
+      "Username": "Ankursinghal9118@gmaiil.com",
       "Password": "Singhal&18",
       "ExpectedResult": "Fail"
     },

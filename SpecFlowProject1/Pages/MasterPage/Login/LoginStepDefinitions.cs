@@ -57,17 +57,21 @@ namespace SpecflowProject1.Pages.MasterPage.Login
         {
             Console.WriteLine(0 + "Pass");
         }
-
-        [When(@"Type in InValid Credentials")]
-        public void WhenTypeInInValidCredentials()
+        [When(@"Type in InValid Credentials for Case '(.*)'")]
+        public void WhenTypeInInValidCredentialsForCase(int i)
         {
-            throw new PendingStepException();
+            string dataJson = File.ReadAllText(@"C:\Users\ankur\source\repos\SpecFlowProject1\SpecFlowProject1\DataFiles\TestData.json");
+            Users users = JsonConvert.DeserializeObject<Users>(dataJson);
+            User user = users.users.ElementAt(i);
+            Console.WriteLine(LoginMethodUserObj.userUsername(i));
+            Console.WriteLine(LoginMethodPassObj.userPassword(i));
+            MasterPageObj.MarsMasterPageLoginUser(LoginMethodUserObj.userUsername(i), LoginMethodPassObj.userPassword(i));
         }
 
         [Then(@"Unsuccessful Login")]
         public void ThenUnsuccessfulLogin()
         {
-            throw new PendingStepException();
+            Console.WriteLine(0 + "Fail");
         }
     }
 }

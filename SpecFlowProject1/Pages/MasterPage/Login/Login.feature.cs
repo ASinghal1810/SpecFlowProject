@@ -75,10 +75,19 @@ namespace SpecFlowProject1.Pages.MasterPage.Login
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Unsuccessful Login")]
-        public virtual void UnsuccessfulLogin()
+        [NUnit.Framework.TestCaseAttribute("1", null)]
+        [NUnit.Framework.TestCaseAttribute("2", null)]
+        [NUnit.Framework.TestCaseAttribute("3", null)]
+        [NUnit.Framework.TestCaseAttribute("4", null)]
+        [NUnit.Framework.TestCaseAttribute("5", null)]
+        [NUnit.Framework.TestCaseAttribute("6", null)]
+        [NUnit.Framework.TestCaseAttribute("7", null)]
+        [NUnit.Framework.TestCaseAttribute("8", null)]
+        public virtual void UnsuccessfulLogin(string caseNumber, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("CaseNumber", caseNumber);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful Login", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -107,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I click on Sign In Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.And("Type in InValid Credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Type in InValid Credentials for Case \'{0}\'", caseNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
  testRunner.Then("Unsuccessful Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -117,12 +126,10 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test Case 1 for Successful Login")]
+        [NUnit.Framework.DescriptionAttribute("Successful Login")]
         [NUnit.Framework.CategoryAttribute("tag1")]
         [NUnit.Framework.TestCaseAttribute("0", null)]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
-        [NUnit.Framework.TestCaseAttribute("2", null)]
-        public virtual void TestCase1ForSuccessfulLogin(string caseNumber, string[] exampleTags)
+        public virtual void SuccessfulLogin(string caseNumber, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "tag1"};
@@ -133,8 +140,8 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("CaseNumber", caseNumber);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test Case 1 for Successful Login", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -154,16 +161,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 12
+#line 22
  testRunner.Given("I logged into portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 13
+#line 23
  testRunner.When("I click on Sign In Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 24
  testRunner.And(string.Format("Type in Valid Credentials for Case \'{0}\'", caseNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 25
  testRunner.Then("User is logged in Successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
